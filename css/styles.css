@@ -8,3 +8,9 @@ header>img {
     width: 15%;
     height: 100%;
 }
+
+.headings {
+    width: 85%;
+    display: flex;
+    flex-wrap: wrap;
+}
