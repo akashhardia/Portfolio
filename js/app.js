@@ -36,3 +36,40 @@ const arr = [
             color: "background-color: rgba(255,84,131,.8)"
         }
     ];
+
+
+// puts all of the work cards on screen
+function initDocument(){
+    let cardsContainer = document.querySelector('.featured-work');
+
+    arr.forEach(function(item){
+        let card = document.createElement('div');
+        card.setAttribute('class','card');
+        let imageDivElement = document.createElement('div');
+        imageDivElement.setAttribute('class',"image");
+        imageDivElement.setAttribute('style',item.img);
+        let imageOverlayElement = document.createElement('div');
+        imageOverlayElement.setAttribute('class',"overlay");
+        imageOverlayElement.setAttribute('style',item.color);
+
+        imageDivElement.appendChild(imageOverlayElement);
+        card.appendChild(imageDivElement);
+
+        let cardDetails = document.createElement('div');
+        cardDetails.setAttribute('class',"card-details");
+        let anchorElement = document.createElement('a');
+        anchorElement.setAttribute('href',item.href);
+        anchorElement.innerHTML = `<div class="preview"><i class="far fa-eye"></i></div>`;
+        let paraElement = document.createElement('p');
+        paraElement.innerHTML = item.title;
+
+        cardDetails.appendChild(anchorElement);
+        cardDetails.appendChild(paraElement);
+
+        card.appendChild(cardDetails);
+
+        cardsContainer.appendChild(card);
+    });
+}
+
+window.addEventListener('DOMContentLoaded', initDocument);
