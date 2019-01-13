@@ -3,6 +3,12 @@ body{
     margin: 0px;
 }
 
+header {
+    height: 4%;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
 
 header>img {
     width: 15%;
